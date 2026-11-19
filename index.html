@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Solo nosotros · Juegos para conectar de verdad</title>
+<meta name="description" content="Juego de conversación que convierte la plática de siempre en historias que tu familia nunca había contado. Esta Navidad, conectemos: 55 tarjetas para Nochebuena y Año Nuevo.">
+<meta property="og:title" content="Solo nosotros · Esta Navidad, conectemos">
+<meta property="og:description" content="Que esta Nochebuena no sea puro celular. 55 tarjetas para que tu familia platique de verdad.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FFF1D8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..800,0..100,0..1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<style>
+/* =========================================================
+   SOLO NOSOTROS · Landing
+   Paleta: coral #E85D4A · amarillo #F3C64E · turquesa #4FAE9B
+           verde #397451 · crema #FFF1D8
+   ========================================================= */
+:root{
+  --coral:#E85D4A; --coral-soft:#FBE3DE; --coral-ink:#2B1410;
+  --amarillo:#F3C64E; --amarillo-dk:#E8B23A; --amarillo-soft:#FCF0CC;
+  --turquesa:#4FAE9B; --turquesa-soft:#DDF0EB;
+  --verde:#397451; --verde-dk:#2A5A3E; --verde-soft:#DCE8E0;
+  --crema:#FFF1D8; --papel:#FFFAF0; --arena:#F6E6C8; --borde:#E9DCC0;
+  --tinta:#23382B; --tinta-suave:#4A5E51;
+  --radio:22px;
+  --sombra:0 1px 0 rgba(57,116,81,.06), 0 12px 32px -18px rgba(57,116,81,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--crema);color:var(--tinta);font-family:'DM Sans',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:var(--verde)}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;color:var(--verde);line-height:1.1;letter-spacing:-.02em;margin:0;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 96;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.narrow{max-width:720px}
+section{padding:76px 0}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);background:var(--verde-soft);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.sec-title{font-size:clamp(30px,5vw,46px);margin-bottom:18px}
+.sec-lead{font-size:19px;color:var(--tinta-suave);max-width:620px}
+
+/* ---------- marca ---------- */
+.wordmark{font-family:'Fraunces',Georgia,serif;font-weight:600;color:var(--verde);letter-spacing:-.025em;line-height:1;white-space:nowrap;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 144}
+.iconrow{display:flex;align-items:center;gap:var(--gap,14px)}
+.iconrow svg{width:var(--size,28px);height:var(--size,28px);flex-shrink:0}
+
+/* ---------- barra superior ---------- */
+.top{position:sticky;top:0;z-index:40;background:rgba(255,241,216,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--borde)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:64px}
+.top .wordmark{font-size:26px}
+.top .btn{padding:10px 18px;font-size:15px;min-height:44px}
+
+/* ---------- botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:15px 26px;border-radius:999px;background:var(--verde);color:var(--crema);font-weight:700;font-size:17px;text-decoration:none;text-align:center;line-height:1.25;border:0;cursor:pointer;transition:transform .15s ease, background .15s ease}
+.btn:hover{background:var(--verde-dk);transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--amarillo);outline-offset:3px}
+.btn.coral{background:var(--coral);color:var(--coral-ink)}
+.btn.coral:hover{background:#DD4F3C}
+.btn.big{font-size:18px;padding:18px 30px;width:100%;max-width:520px}
+.cta-row{margin-top:30px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cta-note{font-size:14px;color:var(--tinta-suave)}
+
+/* ---------- hero ---------- */
+.hero{padding:56px 0 72px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:44px;justify-items:center;text-align:center}
+.hero-grid>div:first-child{max-width:760px;display:flex;flex-direction:column;align-items:center}
+.hero .firma{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:30px}
+.hero .firma .wordmark{font-size:clamp(42px,7vw,64px)}
+.hero .tagline{font-size:15px;font-weight:500;letter-spacing:.02em;color:var(--tinta-suave)}
+.hero h1{font-size:clamp(38px,6.4vw,64px);margin-bottom:20px}
+.hero .sub{font-size:20px;color:var(--tinta-suave);max-width:600px;margin:0 auto}
+.hero .cta-row{align-items:center}
+.hero .pills{justify-content:center}
+.price-chip{font-size:15px;color:var(--tinta-suave)}
+.price-chip strong{font-family:'Fraunces',serif;font-size:26px;color:var(--verde)}
+
+/* tarjeta de juego (mockup) */
+.cardstack{position:relative;height:440px;max-width:360px;margin:0 auto;width:100%}
+.gcard{position:absolute;inset:0;border-radius:26px;background:var(--papel);border:1px solid var(--borde);box-shadow:var(--sombra);padding:30px 26px;display:flex;flex-direction:column;justify-content:space-between}
+.gcard.back1{transform:rotate(-7deg) translate(-18px,10px);background:var(--turquesa-soft)}
+.gcard.back2{transform:rotate(5deg) translate(16px,4px);background:var(--amarillo-soft)}
+.gcard.front{background:var(--verde);color:var(--crema);border:0}
+.gcard .cat{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.gcard .cat>span{width:26px;height:26px;flex-shrink:0}
+.gcard .cat svg{width:26px;height:26px}
+.gcard .q{font-family:'Fraunces',serif;font-size:31px;line-height:1.18;font-weight:600;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 72;color:var(--crema)}
+.gcard .foot{display:flex;justify-content:space-between;align-items:center;font-size:13px;opacity:.9}
+.gcard .pass{border:1.5px solid rgba(255,241,216,.6);border-radius:999px;padding:6px 14px;font-weight:700}
+
+/* ---------- bullets ---------- */
+.power{background:var(--papel);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
+.power ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 40px}
+.power li{display:flex;gap:14px;align-items:flex-start;font-size:18px}
+.power li>span:first-child{width:28px;height:28px;flex-shrink:0;margin-top:1px}
+.power li>span:first-child svg{width:28px;height:28px}
+
+/* ---------- precio ---------- */
+.pricebox{background:var(--papel);border:2px solid var(--verde);border-radius:var(--radio);padding:34px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;box-shadow:var(--sombra)}
+.pricebox .amount{font-family:'Fraunces',serif;font-weight:700;font-size:72px;line-height:1;color:var(--verde);letter-spacing:-.03em}
+.pricebox .amount small{font-size:22px;font-weight:600}
+.pricebox h2{font-size:28px;margin-bottom:8px}
+.pricebox p{color:var(--tinta-suave)}
+.pricebox .extra{margin-top:12px;font-size:15px;color:var(--tinta)}
+.pricebox .extra strong{color:var(--verde)}
+
+/* ---------- para mí ---------- */
+.checks{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px}
+.checks li{display:flex;gap:16px;align-items:flex-start;background:var(--papel);border:1px solid var(--borde);border-radius:16px;padding:18px 20px;font-size:18px}
+.checks .tick{width:28px;height:28px;border-radius:50%;background:var(--verde);color:var(--crema);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:15px}
+.closer{margin-top:22px;font-weight:700;color:var(--verde)}
+
+/* ---------- problema ---------- */
+.problema{background:var(--verde);color:var(--crema)}
+.problema h2{color:var(--crema)}
+.problema .eyebrow{background:rgba(255,241,216,.14);color:var(--crema)}
+.problema .body{display:grid;gap:20px;font-size:20px;max-width:680px}
+.problema .mech{font-family:'Fraunces',serif;font-style:normal;color:var(--amarillo);font-weight:600}
+
+/* ---------- solución + método ---------- */
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.sol-lines{display:grid;gap:16px;font-size:19px;margin-top:22px}
+.sol-lines p:last-child{font-weight:700;color:var(--verde)}
+.steps{display:grid;gap:16px}
+.step{background:var(--papel);border:1px solid var(--borde);border-radius:var(--radio);padding:24px 26px;display:grid;grid-template-columns:auto 1fr;gap:18px}
+.step .n{font-family:'Fraunces',serif;font-size:40px;font-weight:700;line-height:1;color:var(--coral)}
+.step h3{font-size:22px;margin-bottom:6px}
+.step p{color:var(--tinta-suave)}
+.modes{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.modes span{font-size:13px;font-weight:700;background:var(--verde-soft);color:var(--verde);padding:5px 11px;border-radius:999px}
+
+/* ---------- urgencia ---------- */
+.urgencia{background:var(--amarillo-soft);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
+.urgencia .body{display:grid;gap:16px;font-size:20px;max-width:700px;margin-top:8px}
+.urgencia .body p:last-child{font-weight:700;color:var(--verde)}
+
+/* ---------- biblioteca ---------- */
+.star{margin-top:40px;border-radius:28px;background:var(--verde);color:var(--crema);padding:40px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;box-shadow:var(--sombra)}
+.star .ic{width:128px;height:128px;border-radius:30px;background:rgba(255,241,216,.1);display:flex;align-items:center;justify-content:center}
+.star .ic svg{width:88px;height:88px}
+.star .badge{display:inline-block;background:var(--amarillo);color:#3A2C05;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px}
+.star h3{color:var(--crema);font-size:clamp(30px,4.6vw,42px);margin-bottom:16px}
+.star dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0 0 24px;font-size:16px}
+.star dt{font-weight:700;color:var(--amarillo)}
+.star dd{margin:0}
+.star .cats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.star .cats span{font-size:14px;border:1px solid rgba(255,241,216,.4);border-radius:999px;padding:5px 12px}
+.star .btn{background:var(--crema);color:var(--verde)}
+.star .btn:hover{background:#fff}
+.lib-sub{margin:56px 0 20px;font-size:26px}
+.lib-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.deck{border-radius:var(--radio);padding:26px;display:flex;flex-direction:column;gap:14px;border:1px solid rgba(0,0,0,.04)}
+.deck .head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.deck .head svg{width:52px;height:52px}
+.deck .status{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:rgba(255,250,240,.8);color:var(--verde);white-space:nowrap}
+.deck h3{font-size:25px}
+.deck .para{font-size:16px;color:var(--tinta)}
+.deck .meta{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:14px;border-top:1px dashed rgba(57,116,81,.25);font-size:15px}
+.deck .meta strong{font-family:'Fraunces',serif;font-size:22px;color:var(--verde)}
+.deck .buy{font-weight:700;font-size:15px;color:var(--verde);text-decoration:none;border-bottom:2px solid currentColor;padding:6px 0}
+.t-coral{background:var(--coral-soft)} .t-amarillo{background:var(--amarillo-soft)} .t-turquesa{background:var(--turquesa-soft)} .t-verde{background:var(--verde-soft)}
+
+/* ---------- bonos ---------- */
+.bonos-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+.bono{background:var(--papel);border:1px solid var(--borde);border-radius:var(--radio);padding:28px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.bono .ic{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.bono .ic svg{width:30px;height:30px}
+.bono .num{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-suave)}
+.bono h3{font-size:24px;margin:2px 0 6px}
+.bono .hook{font-weight:700;color:var(--verde);margin-bottom:6px}
+.bono p{color:var(--tinta-suave)}
+
+/* ---------- resumen ---------- */
+.resumen table{width:100%;border-collapse:collapse;margin-top:28px;background:var(--papel);border-radius:var(--radio);overflow:hidden;border:1px solid var(--borde)}
+.resumen th,.resumen td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--borde);font-size:16px}
+.resumen th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-suave);background:var(--arena)}
+.resumen td:last-child,.resumen th:last-child{text-align:right;white-space:nowrap}
+.resumen tr.total td{font-weight:700;color:var(--verde);border-bottom:0}
+.resumen .hoy{margin-top:28px;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 24px}
+.resumen .ahorro{font-size:18px;font-weight:700;color:var(--coral-ink);background:var(--coral-soft);padding:6px 14px;border-radius:999px}
+.resumen .final{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--verde)}
+
+/* ---------- garantía ---------- */
+.garantia .box{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--papel);border:1px solid var(--borde);border-radius:var(--radio);padding:34px}
+.garantia .seal{justify-self:center;width:120px;height:120px;border-radius:50%;background:var(--turquesa);color:#0F2A24;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700;line-height:1.05}
+.garantia .seal b{font-family:'Fraunces',serif;font-size:46px}
+.garantia h2{font-size:30px;margin-bottom:10px}
+.garantia p{color:var(--tinta-suave);font-size:18px}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;gap:12px;margin-top:30px}
+.faq details{background:var(--papel);border:1px solid var(--borde);border-radius:16px;padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;padding:20px 32px 20px 0;font-weight:700;font-size:18px;color:var(--verde);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--coral)}
+.faq details[open] summary::after{content:'–'}
+.faq details p{padding:0 0 20px;color:var(--tinta-suave)}
+
+/* ---------- cierre ---------- */
+.cierre{background:var(--verde);color:var(--crema);text-align:center}
+.cierre h2{color:var(--crema);font-size:clamp(32px,5.4vw,52px);margin-bottom:26px}
+.cierre .lines{display:grid;gap:10px;font-size:20px;max-width:620px;margin:0 auto}
+.cierre .btn{margin-top:34px;background:var(--amarillo);color:#3A2C05}
+.cierre .btn:hover{background:#F7D46C}
+
+/* ---------- pie ---------- */
+footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom));background:var(--crema);border-top:1px solid var(--borde)}
+footer .wrap{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+footer .wordmark{font-size:34px}
+footer .legal{font-size:14px;color:var(--tinta-suave)}
+footer .legal a{color:var(--tinta-suave)}
+
+
+/* ---------- añadidos ---------- */
+.pills{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.pills li{font-size:14px;font-weight:700;color:var(--verde);background:var(--papel);border:1.5px solid var(--verde);border-radius:999px;padding:6px 14px}
+.bono .tag{display:flex;align-items:center;gap:10px;margin:2px 0 8px}
+.was{color:#C23B2A;font-weight:700;font-size:17px;text-decoration:line-through;text-decoration-color:#C23B2A;text-decoration-thickness:2px}
+.free{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--verde);color:var(--crema);padding:3px 9px;border-radius:999px}
+.strike{color:var(--tinta-suave);text-decoration:line-through;text-decoration-color:#C23B2A;text-decoration-thickness:2px;margin-right:8px}
+.zero{color:#C23B2A;font-weight:700}
+.resumen tr.total td{border-bottom:1px solid var(--borde)}
+.resumen tr.paga td{font-weight:700;color:var(--tinta);background:var(--verde-soft);border-bottom:0}
+.btn.full{max-width:none;width:100%}
+.why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+.why{background:var(--papel);border:1px solid var(--borde);border-top:5px solid var(--turquesa);border-radius:var(--radio);padding:26px}
+.why:nth-child(2){border-top-color:var(--coral)} .why:nth-child(3){border-top-color:var(--verde)} .why:nth-child(4){border-top-color:var(--amarillo)} .why:nth-child(5){border-top-color:var(--coral)} .why:nth-child(6){border-top-color:var(--verde)}
+.why h3{font-size:22px;margin-bottom:8px}
+.why p{color:var(--tinta-suave)}
+.regalo{background:var(--coral-soft)}
+.regalo-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.gift-steps{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
+.gift-steps li{display:flex;gap:14px;align-items:flex-start;font-size:18px}
+.gift-steps b{width:32px;height:32px;border-radius:50%;background:var(--coral);color:var(--coral-ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Fraunces',serif}
+.gift-card{background:var(--verde);color:var(--crema);border-radius:26px;padding:30px;max-width:320px;margin:0 auto;width:100%;box-shadow:var(--sombra);transform:rotate(2deg);display:flex;flex-direction:column;gap:8px}
+.gift-card [data-icon] svg{width:44px;height:44px;margin-bottom:8px}
+.gc-k{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amarillo)}
+.gc-t{font-family:'Fraunces',serif;font-size:30px;font-weight:600;line-height:1.1}
+.gc-s{opacity:.9}
+.gift-card .gc-w{color:var(--crema);font-size:22px;margin-top:18px}
+dialog{border:0;border-radius:24px;padding:0;max-width:460px;width:calc(100% - 32px);background:var(--papel);color:var(--tinta);box-shadow:0 30px 80px -20px rgba(0,0,0,.45)}
+dialog::backdrop{background:rgba(35,56,43,.55)}
+.gift-form{padding:28px;display:grid;gap:14px}
+.gift-form h2{font-size:28px}
+.gift-form label{display:grid;gap:6px;font-weight:700;font-size:15px;color:var(--verde)}
+.gift-form input,.gift-form textarea{font:inherit;font-weight:400;color:var(--tinta);background:#fff;border:1.5px solid var(--borde);border-radius:12px;padding:12px 14px;min-height:46px}
+.gift-form input:focus,.gift-form textarea:focus{outline:3px solid var(--amarillo);border-color:var(--verde)}
+.gift-actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn.ghost{background:transparent;color:var(--verde);border:1.5px solid var(--verde)}
+.btn.ghost:hover{background:var(--verde-soft)}
+.gift-preview{background:var(--crema);border-radius:14px;padding:16px;white-space:pre-line;font-size:15px}
+@media (max-width:900px){.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.regalo-grid{grid-template-columns:1fr}}
+@media (max-width:640px){.why-grid{grid-template-columns:1fr}.gift-steps li{font-size:16px}}
+
+
+.rating-sum{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:17px;color:var(--tinta-suave)}
+.rating-sum strong{font-family:'Fraunces',serif;font-size:34px;color:var(--verde)}
+.stars{position:relative;display:inline-block;align-self:flex-start;font-size:22px;line-height:1;color:#E2CFA8}
+.stars::before{content:'★★★★★'}
+.stars .fill{position:absolute;left:0;top:0;overflow:hidden;white-space:nowrap;color:var(--amarillo-dk)}
+.stars .fill::before{content:'★★★★★'}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.review{margin:0;background:var(--papel);border:1px solid var(--borde);border-radius:var(--radio);padding:26px;display:flex;flex-direction:column;gap:14px}
+.review blockquote{margin:0;font-size:17px;line-height:1.55}
+.review .who{margin-top:auto;font-size:14px;color:var(--tinta-suave)}
+.review .who b{color:var(--verde)}
+@media (max-width:900px){.reviews-grid{grid-template-columns:1fr}}
+
+
+/* precio de oferta */
+.offer{display:inline-flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.offer .val{font-family:'DM Sans',sans-serif;letter-spacing:.05em;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--tinta-suave);align-self:center}
+.offer .old{font-family:'Fraunces',serif;font-weight:600;color:#C23B2A;text-decoration:line-through;text-decoration-color:#C23B2A;text-decoration-thickness:3px}
+.offer .now{font-family:'Fraunces',serif;font-weight:700;color:var(--verde);display:inline-block;animation:latido 1.8s ease-in-out infinite;transform-origin:center}
+@keyframes latido{0%,100%{transform:scale(1);text-shadow:0 0 0 rgba(57,116,81,0)}50%{transform:scale(1.07);text-shadow:0 0 18px rgba(57,116,81,.35)}}
+@media (prefers-reduced-motion: reduce){.offer .now{animation:none}}
+.price-chip .offer .old{font-size:20px}.price-chip .offer .now{font-size:30px}
+.pricebox .offer .old{font-size:44px}.pricebox .offer .now{font-size:76px;line-height:1}
+.resumen .offer .old{font-size:28px}.resumen .offer .now{font-size:48px}
+
+/* ---------- animación ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .hero-grid,.sol-grid{grid-template-columns:1fr}
+  .cardstack{height:400px;max-width:320px;margin-top:8px}
+  .lib-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  section{padding:58px 0}
+  .top .wordmark{font-size:22px}
+  .top .btn{padding:9px 14px;font-size:14px}
+  .hero{padding-top:36px}
+  .hero .sub{font-size:18px}
+  .power ul,.bonos-grid,.lib-grid{grid-template-columns:1fr}
+  .pricebox,.star,.garantia .box{grid-template-columns:1fr;padding:26px}
+  .garantia .box{text-align:center}
+  .pricebox{text-align:center}
+  .pricebox .amount{display:flex;flex-direction:column;align-items:center}
+  .pricebox .offer{justify-content:center}
+  .pricebox .amount{font-size:60px}
+  .star .ic{width:96px;height:96px;border-radius:24px}
+  .star .ic svg{width:64px;height:64px}
+  .problema .body,.urgencia .body,.sol-lines,.cierre .lines{font-size:18px}
+  .gcard .q{font-size:27px}
+  .resumen th,.resumen td{padding:13px 14px;font-size:15px}
+  .iconrow{--gap:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     CONFIGURACIÓN RÁPIDA
+     1) Cambia los enlaces de checkout de Hotmart en el script
+        del final (objeto CHECKOUT).
+     2) Para abrir la venta de un mazo adicional, cambia su
+        "disponible" a true en el objeto COLECCIONES.
+     ========================================================= -->
+
+<header class="top">
+  <div class="wrap">
+    <a href="#inicio" class="wordmark" style="text-decoration:none" aria-label="Solo nosotros, inicio">solo nosotros</a>
+    <a class="btn js-checkout" data-mazo="navidad" href="#">Comprar · $149</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- ================= BLOQUE 1 · ENCABEZADO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="firma">
+        <span class="wordmark" role="img" aria-label="solo nosotros">solo nosotros</span>
+        <div class="iconrow" style="--size:26px;--gap:12px" aria-hidden="true" id="firma-hero"></div>
+        <span class="tagline">Juegos para conectar de verdad.</span>
+      </div>
+      <h1>Que esta Nochebuena no sea puro celular</h1>
+      <p class="sub">Juego de conversación que convierte la plática de siempre en historias que tu familia nunca había contado.</p>
+      <ul class="pills" aria-label="Cómo funciona">
+        <li>Mini app web</li><li>No se descarga nada</li><li>Acceso inmediato</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn big js-checkout" data-mazo="navidad" href="#">Quiero una Nochebuena que sí se platique</a>
+        <p class="price-chip"><span class="offer"><span class="val">Valor</span><s class="old">$345</s><span class="now">$149</span></span><br>MXN · Esta Navidad, conectemos con 4 bonos de lanzamiento</p>
+      </div>
+    </div>
+    <div class="cardstack" aria-hidden="true">
+      <div class="gcard back1"></div>
+      <div class="gcard back2"></div>
+      <div class="gcard front">
+        <div class="cat"><span data-icon="pino-crema"></span>Cuando yo era pequeño…</div>
+        <p class="q">¿Qué regalo de Navidad de cuando eras niño todavía recuerdas, y quién te lo dio?</p>
+        <div class="foot"><span>Tarjeta 12 de 55</span><span class="pass">Paso</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 2 · BULLETS ================= -->
+<section class="power">
+  <div class="wrap">
+    <ul>
+      <li><span data-icon="bocadillo"></span><span>Por qué preguntar «¿y cómo va el trabajo?» es justo lo que apaga la plática en la mesa.</span></li>
+      <li><span data-icon="destello"></span><span>La Escalera de Preguntas: de la primera carcajada a la historia que el abuelo nunca había contado.</span></li>
+      <li><span data-icon="hoja"></span><span>Un solo celular al centro de la mesa. Sin instalar nada, sin explicar reglas.</span></li>
+      <li><span data-icon="flor"></span><span>La primera pregunta ya está elegida: nadie tiene que romper el hielo.</span></li>
+      <li><span data-icon="corazon"></span><span>Cualquiera puede pasar sin explicar por qué. Nadie se siente juzgado.</span></li>
+      <li><span data-icon="pino"></span><span>Sirve para la cena de Nochebuena y para la espera de las doce en Año Nuevo.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 3 · PRECIO ================= -->
+<section>
+  <div class="wrap narrow reveal">
+    <div class="pricebox">
+      <div class="amount"><span class="offer"><span class="val">Valor</span><s class="old">$345</s><span class="now">$149</span></span><small style="display:block;font-size:16px;font-family:'DM Sans',sans-serif;color:var(--tinta-suave);margin-top:6px;letter-spacing:normal;font-weight:500">MXN · precio de lanzamiento</small></div>
+      <div>
+        <h2>Esta Navidad, conectemos</h2>
+        <p>Precio de lanzamiento con 4 bonos incluidos. Cuesta menos que una pizza familiar, y la plática que provoca la van a contar por años.</p>
+        <p class="extra">Cada mazo cuesta <strong>$149 MXN</strong>. Al pagar te espera un <strong>descuento especial de lanzamiento por llevarte más de uno</strong>: cada mazo adicional baja a $129.</p>
+      </div>
+    </div>
+    <div class="cta-row" style="align-items:center">
+      <a class="btn big js-checkout" data-mazo="navidad" href="#">Quiero una Nochebuena que sí se platique</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 4 · ¿ES PARA MÍ? ================= -->
+<section style="padding-top:20px">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow">¿Esto es para mí?</span>
+    <h2 class="sec-title">Si en la cena te ha pasado alguna de las siguientes, sí</h2>
+    <ul class="checks">
+      <li><span class="tick">✓</span><span>Cada año la cena es igual: «¿y el trabajo?», «¿y para cuándo la boda?» y luego silencio.</span></li>
+      <li><span class="tick">✓</span><span>A media cena, la mitad de la mesa ya está viendo el celular.</span></li>
+      <li><span class="tick">✓</span><span>Tus papás o tus abuelos tienen historias que nunca les has preguntado.</span></li>
+      <li><span class="tick">✓</span><span>Te toca organizar Nochebuena o Año Nuevo y no quieres improvisar cómo hacer que todos platiquen.</span></li>
+    </ul>
+    <p class="closer">Si te pasó al menos una, sigue leyendo.</p>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 5 · PROBLEMA ================= -->
+<section class="problema">
+  <div class="wrap reveal">
+    <span class="eyebrow">El problema</span>
+    <h2 class="sec-title">La cena donde todos están y nadie platica</h2>
+    <div class="body">
+      <p>Llegan todos, se sirven, se ríen un rato. Pero en la sobremesa la plática se apaga y los celulares salen solos.</p>
+      <p>Se llama el <span class="mech">Bucle de la Plática de Siempre</span>: las mismas preguntas cada año, las mismas respuestas cortas, y nadie se atreve a salirse del guion.</p>
+      <p>No es que tu familia no se quiera. Nadie les dio una buena primera pregunta. Y soltar una pregunta profunda en frío da pena.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUES 6 Y 7 · SOLUCIÓN Y MÉTODO ================= -->
+<section>
+  <div class="wrap sol-grid">
+    <div class="reveal">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2 class="sec-title">La Escalera de Preguntas</h2>
+      <p class="sec-lead">De la risa a la historia, sin que nadie se sienta expuesto.</p>
+      <div class="sol-lines">
+        <p>Tú abres el juego y pones el celular al centro de la mesa.</p>
+        <p>La Escalera ordena las preguntas para que la noche empiece ligera y suba sola de nivel.</p>
+        <p>Reciben una conversación de 25 a 45 minutos que nadie tuvo que dirigir. Sin reglas complicadas. Sin descargar nada.</p>
+      </div>
+    </div>
+    <div class="steps reveal">
+      <p style="font-weight:700;color:var(--verde);font-size:18px">3 pasos para pasar de la plática de siempre a la sobremesa que van a recordar</p>
+      <div class="step">
+        <span class="n">01</span>
+        <div>
+          <h3>Elige cómo jugar</h3>
+          <p>Abre Esta Navidad, conectemos y elige el modo.</p>
+          <div class="modes"><span>Cena completa</span><span>De las risas al corazón</span><span>Una pregunta antes del postre</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <div>
+          <h3>La Escalera de Preguntas</h3>
+          <p>El juego reparte las tarjetas en el orden correcto y mete las especiales a media partida para cambiar el ritmo.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <div>
+          <h3>La sobremesa que se queda</h3>
+          <p>Cierran con la tarjeta final y una foto para el recuerdo. Lo que se dijo esa noche se queda con ustedes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 8 · URGENCIA ================= -->
+<section class="urgencia">
+  <div class="wrap reveal">
+    <h2 class="sec-title">¿Cuántos fines de año más van a platicar de lo mismo?</h2>
+    <div class="body">
+      <p>La plática de siempre no cambia sola.</p>
+      <p>Cada fin de año que pasa es uno menos para preguntarle a tu abuela cómo conoció a tu abuelo.</p>
+      <p>Este año pueden repetir la cena de siempre o recibir el año sabiendo algo que no sabían de quien tienen al lado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIBLIOTECA ================= -->
+<section id="colecciones">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">La biblioteca</span>
+      <h2 class="sec-title">Una biblioteca, siete conversaciones</h2>
+      <p class="sec-lead">Todas las colecciones viven en una sola app. Compras los mazos que quieras y aparecen desbloqueados en tu biblioteca.</p>
+    </div>
+
+    <article class="star reveal" aria-labelledby="star-title">
+      <div class="ic" data-icon="pino-crema-xl"></div>
+      <div>
+        <span class="badge">La estrella de esta temporada</span>
+        <h3 id="star-title">Esta Navidad, conectemos</h3>
+        <dl>
+          <dt>Para quién</dt><dd>Reuniones de Nochebuena y Año Nuevo, de los niños a los abuelos.</dd>
+          <dt>Qué trae</dt><dd>55 tarjetas: 50 preguntas en 5 categorías y 5 tarjetas especiales.</dd>
+          <dt>Precio</dt><dd>$149 MXN, con los 4 bonos de lanzamiento.</dd>
+        </dl>
+        <div class="cats">
+          <span>¡Que empiece la fiesta!</span><span>Cuando yo era pequeño…</span><span>Hay algo que no sabes de mí</span><span>Lo que nunca decimos</span><span>Nuestra historia continúa</span>
+        </div>
+        <a class="btn js-checkout" data-mazo="navidad" href="#">Empezar con el mazo navideño</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= BLOQUES 9 A 11 · BONOS ================= -->
+<section style="background:var(--arena)">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Bonos de lanzamiento</span>
+      <h2 class="sec-title">Cuatro herramientas que juegan contigo</h2>
+      <p class="sec-lead">Incluidas al comprar con precio de lanzamiento. Funcionan con todos tus mazos.</p>
+    </div>
+    <div class="bonos-grid">
+      <article class="bono reveal">
+        <div class="ic" style="background:var(--coral-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="#B8402F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#B8402F"/></svg></div>
+        <div>
+          <span class="num">Bono 1</span>
+          <h3>Selector Rompehielo</h3>
+          <p class="tag"><s class="was">$49 MXN</s><span class="free">Incluido</span></p>
+          <p class="hook">La primera pregunta ya está elegida.</p>
+          <p>Dile quién está en la mesa y te da la pregunta ideal para arrancar con risas, no con silencio incómodo.</p>
+        </div>
+      </article>
+      <article class="bono reveal">
+        <div class="ic" style="background:var(--amarillo-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="#8A6410" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg></div>
+        <div>
+          <span class="num">Bono 2</span>
+          <h3>Generador de Rondas</h3>
+          <p class="tag"><s class="was">$49 MXN</s><span class="free">Incluido</span></p>
+          <p class="hook">Juega aunque solo queden 10 minutos antes del postre.</p>
+          <p>Elige cuánto tiempo tienen y arma una ronda del tamaño exacto, de unas cuantas tarjetas a la noche completa.</p>
+        </div>
+      </article>
+      <article class="bono reveal">
+        <div class="ic" style="background:var(--turquesa-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="#2C7A6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"/></svg></div>
+        <div>
+          <span class="num">Bono 3</span>
+          <h3>Filtro de Participación</h3>
+          <p class="tag"><s class="was">$49 MXN</s><span class="free">Incluido</span></p>
+          <p class="hook">Que el niño de 8 y la abuela de 80 jueguen la misma partida.</p>
+          <p>Marca quién juega y el filtro esconde las preguntas que no van con esa mesa.</p>
+        </div>
+      </article>
+      <article class="bono reveal">
+        <div class="ic" style="background:var(--verde-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="#397451" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+        <div>
+          <span class="num">Bono 4</span>
+          <h3>Cierre para Recordar</h3>
+          <p class="tag"><s class="was">$49 MXN</s><span class="free">Incluido</span></p>
+          <p class="hook">Que la noche no se quede en «estuvo bonito».</p>
+          <p>Al final arma una tarjeta con la frase de cierre y la foto del recuerdo, lista para el grupo de la familia.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAS DEMÁS COLECCIONES ================= -->
+<section id="mas-colecciones">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Para todo el año</span>
+      <h2 class="sec-title">Las demás colecciones</h2>
+      <p class="sec-lead">Cada colección se suma a la misma biblioteca, y los bonos funcionan con todas.</p>
+    </div>
+    <div class="lib-grid" id="lib-grid" style="margin-top:30px"></div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 12 · ¿QUÉ ESTÁ DICIENDO LA GENTE? =================
+     Esta sección se muestra sola en cuanto agregues reseñas reales
+     en el arreglo RESENAS del script del final. Mientras esté vacío,
+     la sección queda oculta.
+     ============================================================== -->
+<section id="resenas" hidden>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Reseñas</span>
+      <h2 class="sec-title">¿Qué está diciendo la gente?</h2>
+      <p class="rating-sum" id="rating-sum"></p>
+    </div>
+    <div class="reviews-grid" id="reviews-grid"></div>
+  </div>
+</section>
+
+<!-- ================= ¿POR QUÉ CON NOSOTROS? ================= -->
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">¿Por qué comprar con nosotros?</span>
+      <h2 class="sec-title">Lo que una baraja de cartón no te puede dar</h2>
+    </div>
+    <div class="why-grid">
+      <article class="why reveal"><h3>Juegas hoy, no cuando llegue el paquete</h3><p>Un juego de mesa físico cuesta entre $350 y $500 pesos, más envío, y llega cuando llega. Aquí pagas menos y entras en minutos.</p></article>
+      <article class="why reveal"><h3>Preguntas para tu mesa exacta</h3><p>Le dices quién juega y la app esconde lo que no va. La misma partida sirve con niños, primos y abuelos.</p></article>
+      <article class="why reveal"><h3>No se descarga nada</h3><p>Es una mini app web. Se abre en el navegador de cualquier celular, sin tienda de apps ni espacio ocupado.</p></article>
+      <article class="why reveal"><h3>No se pierde ni se mancha</h3><p>No hay tarjetas regadas entre los romeritos ni mazos incompletos el año que sigue.</p></article>
+      <article class="why reveal"><h3>Un solo pago</h3><p>Sin suscripción ni cobros sorpresa. Pagas tu mazo una vez y es tuyo.</p></article>
+      <article class="why reveal"><h3>Tu biblioteca crece contigo</h3><p>Cada colección nueva que compres aparece en la misma app, junto a las que ya tienes.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REGALO ================= -->
+<section class="regalo" id="regalo">
+  <div class="wrap">
+    <div class="regalo-grid">
+      <div class="reveal">
+        <span class="eyebrow">¿Es para regalar?</span>
+        <h2 class="sec-title">Regálale a alguien la sobremesa de este año</h2>
+        <ol class="gift-steps">
+          <li><b>1</b><span>Al pagar, escribe el <strong>correo de quien lo va a recibir</strong>. Tú pagas con tu tarjeta.</span></li>
+          <li><b>2</b><span>A esa persona le llega su acceso por correo. No hay nada que enviar por paquetería.</span></li>
+          <li><b>3</b><span>Crea aquí tu mensaje de regalo y mándaselo por WhatsApp para que sepa qué buscar.</span></li>
+        </ol>
+        <div class="cta-row">
+          <button class="btn" type="button" id="gift-open">Crear mensaje de regalo</button>
+          <a class="cta-note js-checkout" data-mazo="navidad" href="#">o ve directo a comprar para regalar</a>
+        </div>
+      </div>
+      <div class="gift-card reveal" aria-hidden="true">
+        <span data-icon="pino-crema"></span>
+        <p class="gc-k">Un regalo para ti</p>
+        <p class="gc-t">Esta Navidad, conectemos</p>
+        <p class="gc-s">Revisa tu correo: ahí llegó tu acceso.</p>
+        <span class="wordmark gc-w">solo nosotros</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dialog id="gift-dialog" aria-labelledby="gift-title">
+  <form method="dialog" class="gift-form" id="gift-form">
+    <h2 id="gift-title">Tu mensaje de regalo</h2>
+    <label>¿Para quién es?<input name="para" required autocomplete="off" placeholder="Ej. Tía Lupe"></label>
+    <label>Correo que pusiste al pagar<input name="correo" type="email" required autocomplete="off" placeholder="correo@ejemplo.com"></label>
+    <label>¿De parte de quién?<input name="de" required autocomplete="off" placeholder="Tu nombre"></label>
+    <label>Unas palabras (opcional)<textarea name="nota" rows="2" placeholder="Para que este año sí platiquemos."></textarea></label>
+    <div class="gift-out" id="gift-out" hidden>
+      <p class="gift-preview" id="gift-preview"></p>
+      <div class="gift-actions">
+        <a class="btn" id="gift-wa" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        <button class="btn ghost" type="button" id="gift-copy">Copiar mensaje</button>
+      </div>
+    </div>
+    <div class="gift-actions">
+      <button class="btn" type="button" id="gift-make">Crear mensaje</button>
+      <button class="btn ghost" value="cancel">Cerrar</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- ================= BLOQUE 13 · RESUMEN ================= -->
+<section class="resumen">
+  <div class="wrap narrow reveal">
+    <span class="eyebrow">Resumen de tu acceso</span>
+    <h2 class="sec-title">Todo lo que te llevas hoy</h2>
+    <table>
+      <thead><tr><th>Componente</th><th>Valor</th></tr></thead>
+      <tbody>
+        <tr><td>Esta Navidad, conectemos (55 tarjetas, 3 modos de juego)</td><td>$149 MXN</td></tr>
+        <tr><td>Selector Rompehielo</td><td><s class="strike">$49</s> <b class="zero">$0</b></td></tr>
+        <tr><td>Generador de Rondas</td><td><s class="strike">$49</s> <b class="zero">$0</b></td></tr>
+        <tr><td>Filtro de Participación</td><td><s class="strike">$49</s> <b class="zero">$0</b></td></tr>
+        <tr><td>Cierre para Recordar</td><td><s class="strike">$49</s> <b class="zero">$0</b></td></tr>
+        <tr class="total"><td>Valor total</td><td>$345 MXN</td></tr>
+        <tr class="paga"><td>Tú pagas hoy</td><td>$149 MXN</td></tr>
+      </tbody>
+    </table>
+    <div class="hoy">
+      <span class="ahorro">Hoy ahorras $196 MXN</span>
+      <span style="display:flex;flex-direction:column;gap:4px">Precio de hoy:<span class="offer"><s class="old">$345</s><span class="now">$149</span><span style="font-size:16px;font-weight:700;color:var(--verde)">MXN</span></span></span>
+    </div>
+    <div class="cta-row">
+      <a class="btn big coral full js-checkout" data-mazo="navidad" href="#">Probar Esta Navidad, conectemos sin riesgo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 14 · GARANTÍA ================= -->
+<section class="garantia" style="padding-top:10px">
+  <div class="wrap narrow reveal">
+    <div class="box">
+      <div class="seal" aria-hidden="true"><b>7</b>días</div>
+      <div>
+        <h2>Garantía incondicional de 7 días</h2>
+        <p>Tienes 7 días desde tu compra. Si lo pruebas y sientes que no es para tu familia, te devolvemos tu dinero. Sin preguntas incómodas: el reembolso se pide desde Hotmart.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 15 · FAQ ================= -->
+<section>
+  <div class="wrap narrow reveal">
+    <span class="eyebrow">Preguntas frecuentes</span>
+    <h2 class="sec-title">Lo que nos preguntan antes de comprar</h2>
+    <div class="faq">
+      <details><summary>¿Tengo que descargar una aplicación?</summary><p>No. Es una mini app web: abres el enlace en el navegador de tu celular y empiezas a jugar. No ocupa espacio ni pide actualizaciones.</p></details>
+      <details><summary>¿Cómo accedo?</summary><p>Después de pagar en Hotmart recibes por correo tu acceso a la biblioteca. Entras desde el navegador del celular, sin descargar nada.</p></details>
+      <details><summary>¿Es un curso en video?</summary><p>No. Son juegos: una tarjeta por pantalla, listos para jugar en la mesa.</p></details>
+      <details><summary>¿Cuánto tiempo toma ver resultados?</summary><p>Desde la primera tarjeta. Una partida completa dura de 25 a 45 minutos, y hay un modo corto para antes del postre.</p></details>
+      <details><summary>¿Necesito experiencia previa?</summary><p>No. Alguien lee la tarjeta en voz alta y responde a quien le toque.</p></details>
+      <details><summary>¿Funciona en el celular?</summary><p>Sí, está hecho primero para celular. Basta un solo teléfono al centro de la mesa.</p></details>
+      <details><summary>¿Si compro un mazo, veo los demás?</summary><p>Ves toda la biblioteca, pero solo se abren los mazos que compraste. Puedes sumar otros cuando quieras.</p></details>
+      <details><summary>¿Y si en mi familia hay temas delicados?</summary><p>Cualquiera puede pasar sin explicar por qué. Las preguntas no tocan política, dinero ni pleitos familiares.</p></details>
+      <details><summary>¿Y si no me llega mi acceso?</summary><p>Revisa tu bandeja de spam y de promociones con el correo que escribiste al pagar. Si no está, escríbenos a <a href="mailto:soporteminiapps888@gmail.com">soporteminiapps888@gmail.com</a> con ese correo y te ayudamos.</p></details>
+      <details><summary>¿Puedo regalarlo?</summary><p>Sí. Al pagar escribe el correo de quien lo va a recibir y el acceso le llega a esa persona. Arriba puedes crear el mensaje de regalo para avisarle.</p></details>
+      <details><summary>¿Sirve si hay niños en la mesa?</summary><p>Sí. Esta Navidad, conectemos está hecho para que niños, adolescentes, adultos y abuelos jueguen la misma partida.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 17 · CIERRE ================= -->
+<section class="cierre">
+  <div class="wrap reveal">
+    <h2>Que esta Nochebuena no sea puro celular</h2>
+    <div class="lines">
+      <p>Merecías una cena donde alguien contara algo que nadie sabía.</p>
+      <p>Merecías irte a dormir sintiendo que tu familia sí platicó.</p>
+      <p>Hoy es el día de dejar la plática de siempre y empezar la que van a recordar.</p>
+    </div>
+    <a class="btn big js-checkout" data-mazo="navidad" href="#">Armar la sobremesa que vamos a recordar</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="wordmark">solo nosotros</span>
+    <div class="iconrow" style="--size:20px;--gap:10px" aria-hidden="true" id="firma-footer"></div>
+    <p class="legal">© <span id="year"></span> Solo nosotros · <a href="aviso-privacidad.html">Aviso de privacidad</a> · <a href="terminos.html">Términos y condiciones</a></p>
+    <p class="legal">Pagos procesados de forma segura por Hotmart.</p>
+    <p class="legal">¿Dudas o problemas con tu acceso? Escríbenos a <a href="mailto:soporteminiapps888@gmail.com">soporteminiapps888@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   1) ENLACES DE CHECKOUT DE HOTMART
+   Pega aquí el enlace de pago de cada producto.
+   ========================================================= */
+const CHECKOUT = {
+  navidad:  'https://pay.hotmart.com/REEMPLAZAR_NAVIDAD',
+  familia:  'https://pay.hotmart.com/REEMPLAZAR_FAMILIA',
+  pareja:   'https://pay.hotmart.com/REEMPLAZAR_TU_Y_YO',
+  amigos:   'https://pay.hotmart.com/REEMPLAZAR_ENTRE_AMIGOS',
+  brindemos:'https://pay.hotmart.com/REEMPLAZAR_BRINDEMOS',
+  conocete: 'https://pay.hotmart.com/REEMPLAZAR_CONOCETE',
+  ninos:    'https://pay.hotmart.com/REEMPLAZAR_CUENTAME'
+};
+
+/* =========================================================
+   2) COLECCIONES ADICIONALES
+   disponible: false  → muestra «Próximamente», sin botón.
+   disponible: true   → muestra el botón de compra.
+   ========================================================= */
+const COLECCIONES = [
+  { id:'familia',   nombre:'Las historias de nuestra familia', icono:'flor',     tono:'t-amarillo', para:'Para preguntarle a tus papás y abuelos lo que nunca les preguntaste.', trae:'55 tarjetas', precio:149, disponible:false },
+  { id:'pareja',    nombre:'Tú y yo',                          icono:'corazon',  tono:'t-coral',    para:'Para parejas que creen que ya se saben todo del otro.',                 trae:'55 tarjetas', precio:149, disponible:false },
+  { id:'amigos',    nombre:'Entre amigos',                     icono:'bocadillo',tono:'t-turquesa', para:'Para amigos de años que siempre terminan platicando de lo mismo.',     trae:'55 tarjetas', precio:149, disponible:false },
+  { id:'brindemos', nombre:'Brindemos por nosotros',           icono:'destello', tono:'t-coral',    para:'Para cumpleaños, aniversarios y cualquier celebración.',             trae:'55 tarjetas', precio:149, disponible:false },
+  { id:'conocete',  nombre:'Conócete sin filtro',              icono:'hoja',     tono:'t-verde',    para:'Para saber qué piensas de verdad. A solas o con alguien de confianza.', trae:'55 tarjetas', precio:149, disponible:false },
+  { id:'ninos',     nombre:'Cuéntame, te escucho',             icono:'tren',     tono:'t-turquesa', para:'Para un adulto y un niño, en dos niveles: de 4 a 7 y de 8 a 12 años.',  trae:'72 preguntas y 3 especiales', precio:149, disponible:false }
+];
+
+/* =========================================================
+   ÍCONOS DE MARCA (no editar)
+   ========================================================= */
+const ICON = {
+  pino:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7 C 26 11, 29 14, 32 16.5 L 28.5 16.8 C 31 20, 34.5 23, 37.5 25.5 L 32.8 25.8 C 35.5 29, 39 32, 42 34 L 6 34 C 9 32, 12.5 29, 15.2 25.8 L 10.5 25.5 C 13.5 23, 17 20, 19.5 16.8 L 16 16.5 C 19 14, 22 11, 24 7 Z" fill="#397451"/><rect x="21.5" y="33.5" width="5" height="6.5" rx="1.2" fill="#397451"/><path d="M24 1.5 C 24.6 4.5, 26 5.6, 28.5 6 C 26 6.5, 24.6 7.6, 24 10.5 C 23.4 7.6, 22 6.5, 19.5 6 C 22 5.6, 23.4 4.5, 24 1.5 Z" fill="#E8B23A"/><circle cx="20" cy="23.5" r="1.7" fill="#F3C64E"/><circle cx="28" cy="29.5" r="1.7" fill="#F3C64E"/></svg>',
+  'pino-crema':'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7 C 26 11, 29 14, 32 16.5 L 28.5 16.8 C 31 20, 34.5 23, 37.5 25.5 L 32.8 25.8 C 35.5 29, 39 32, 42 34 L 6 34 C 9 32, 12.5 29, 15.2 25.8 L 10.5 25.5 C 13.5 23, 17 20, 19.5 16.8 L 16 16.5 C 19 14, 22 11, 24 7 Z" fill="#FFF1D8"/><rect x="21.5" y="33.5" width="5" height="6.5" rx="1.2" fill="#FFF1D8"/><path d="M24 1.5 C 24.6 4.5, 26 5.6, 28.5 6 C 26 6.5, 24.6 7.6, 24 10.5 C 23.4 7.6, 22 6.5, 19.5 6 C 22 5.6, 23.4 4.5, 24 1.5 Z" fill="#F3C64E"/></svg>',
+  flor:'<svg viewBox="0 0 48 48" aria-hidden="true"><g transform="translate(24 24)"><ellipse cx="0" cy="-9" rx="6.2" ry="8.7" fill="#F3C64E"/><ellipse cx="0" cy="-9" rx="6" ry="8.4" fill="#F3C64E" transform="rotate(71)"/><ellipse cx="0" cy="-9" rx="6.2" ry="8.8" fill="#F3C64E" transform="rotate(145)"/><ellipse cx="0" cy="-9" rx="6" ry="8.5" fill="#F3C64E" transform="rotate(216)"/><ellipse cx="0" cy="-9" rx="6.2" ry="8.7" fill="#F3C64E" transform="rotate(290)"/></g><circle cx="24.3" cy="23.8" r="5.2" fill="#E85D4A"/></svg>',
+  corazon:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40 C 15 33, 7 27, 7.5 18.5 C 8 12.5, 13.5 9, 18.5 10.5 C 21.5 11.5, 23.2 13.8, 24 16.5 C 25 13.6, 27 11.2, 30.2 10.4 C 35.5 9.2, 40.6 13, 40.4 19 C 40.1 27.5, 32.5 33.5, 24 40 Z" fill="#E85D4A"/></svg>',
+  bocadillo:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12.5 C 8 10, 10 8, 12.5 8 L 36 8.5 C 38.5 8.5, 40.5 10.5, 40.3 13 L 40 27 C 40 29.5, 38 31.3, 35.5 31.2 L 21 31 L 13 38.5 L 14.2 31 L 12.5 31 C 10 31, 8.2 29, 8.2 26.5 Z" fill="#4FAE9B"/><circle cx="17" cy="19.8" r="2.4" fill="#FFFAF0"/><circle cx="24.2" cy="19.5" r="2.4" fill="#FFFAF0"/><circle cx="31.3" cy="19.8" r="2.4" fill="#FFFAF0"/></svg>',
+  destello:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 C 25.5 17, 30 22, 43 24 C 30.5 26, 25.8 30.5, 24 43 C 22.3 30.5, 17.5 26.2, 5 24 C 17.8 22, 22.4 17.5, 24 5 Z" fill="#E8B23A"/></svg>',
+  hoja:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 39 C 8.5 24, 19 11, 40 8.5 C 41 26, 29 38.5, 9 39 Z" fill="#397451"/><path d="M10.5 37.5 C 18 30, 26 21.5, 35 13" fill="none" stroke="#FFFAF0" stroke-width="2.2" stroke-linecap="round"/></svg>',
+  tren:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="14" cy="7" r="2.8" fill="#E8B23A"/><path d="M7 31 L 7 23 C 7 21, 8.5 20, 10.5 20 L 11 20 L 11 14 C 11 13, 11.7 12.5, 12.5 12.5 L 15.5 12.5 C 16.3 12.5, 17 13, 17 14 L 17 20 L 27 20 L 27 13 C 27 11.8, 27.8 11, 29 11 L 39 11 C 40.2 11, 41 11.8, 41 13 L 41 31 C 41 32.2, 40.2 33, 39 33 L 9 33 C 7.8 33, 7 32.2, 7 31 Z" fill="#4FAE9B"/><rect x="30.5" y="14.5" width="7" height="6" rx="1.6" fill="#FFFAF0"/><circle cx="15" cy="36.5" r="4.6" fill="#397451"/><circle cx="33" cy="36.5" r="4.6" fill="#397451"/></svg>'
+};
+ICON['pino-crema-xl'] = ICON['pino-crema'];
+const ORDEN = ['pino','flor','corazon','bocadillo','destello','hoja','tren'];
+
+function fillIcons(){
+  document.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = ICON[el.dataset.icon] || ''; });
+  ['firma-hero','firma-footer'].forEach(id => {
+    const row = document.getElementById(id);
+    if (row) row.innerHTML = ORDEN.map(k => ICON[k]).join('');
+  });
+}
+
+function renderColecciones(){
+  const grid = document.getElementById('lib-grid');
+  grid.innerHTML = COLECCIONES.map(c => `
+    <article class="deck ${c.tono} reveal">
+      <div class="head">${ICON[c.icono]}<span class="status">${c.disponible ? 'Disponible' : 'Próximamente'}</span></div>
+      <h3>${c.nombre}</h3>
+      <p class="para">${c.para}</p>
+      <div class="meta">
+        <span>${c.trae}</span>
+        ${c.disponible
+          ? `<a class="buy" href="${CHECKOUT[c.id] || '#'}">Comprar · $${c.precio}</a>`
+          : `<strong>$${c.precio}</strong>`}
+      </div>
+    </article>`).join('');
+}
+
+function wireCheckout(){
+  document.querySelectorAll('.js-checkout').forEach(a => {
+    const url = CHECKOUT[a.dataset.mazo];
+    if (url) a.href = url;
+  });
+}
+
+function reveal(){
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  els.forEach(e => io.observe(e));
+}
+
+fillIcons();
+renderColecciones();
+wireCheckout();
+reveal();
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+/* =========================================================
+   3) RESEÑAS REALES
+   Agrega solo reseñas de personas reales, con su permiso.
+   Ejemplo de formato:
+   { nombre:'Nombre', detalle:'Ciudad o relación', estrellas:5, texto:'Lo que te dijeron, con sus palabras.' }
+   ========================================================= */
+const RESENAS = [
+];
+
+(function(){
+  if (!RESENAS.length) return;
+  const sec = document.getElementById('resenas');
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const stars = n => `<span class="stars" role="img" aria-label="${n} de 5 estrellas"><span class="fill" style="width:${Math.max(0,Math.min(5,n))/5*100}%"></span></span>`;
+  const prom = RESENAS.reduce((a,r) => a + Number(r.estrellas||0), 0) / RESENAS.length;
+  document.getElementById('rating-sum').innerHTML =
+    `<strong>${prom.toFixed(1)}</strong>${stars(Math.round(prom*2)/2)}<span>de 5, con ${RESENAS.length} ${RESENAS.length === 1 ? 'reseña' : 'reseñas'}</span>`;
+  document.getElementById('reviews-grid').innerHTML = RESENAS.map(r => `
+    <figure class="review reveal in">
+      ${stars(Number(r.estrellas))}
+      <blockquote>"${esc(r.texto)}"</blockquote>
+      <figcaption class="who"><b>${esc(r.nombre)}</b>${r.detalle ? ' · ' + esc(r.detalle) : ''}</figcaption>
+    </figure>`).join('');
+  sec.hidden = false;
+})();
+
+/* =========================================================
+   MENSAJE DE REGALO (no se guarda nada: todo pasa en el navegador)
+   ========================================================= */
+(function(){
+  const dlg = document.getElementById('gift-dialog');
+  const form = document.getElementById('gift-form');
+  const out = document.getElementById('gift-out');
+  const prev = document.getElementById('gift-preview');
+  const wa = document.getElementById('gift-wa');
+  let texto = '';
+  document.getElementById('gift-open').addEventListener('click', () => {
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
+  });
+  document.getElementById('gift-make').addEventListener('click', () => {
+    if (!form.reportValidity()) return;
+    const d = Object.fromEntries(new FormData(form));
+    texto = `¡${d.para.trim()}! Te regalé «Esta Navidad, conectemos», un juego de conversación para la cena de Nochebuena y Año Nuevo.\n\n`
+      + `Revisa tu correo ${d.correo.trim()}: ahí te llegó tu acceso (busca también en spam y promociones). Se abre en el navegador del celular, no se descarga nada.\n\n`
+      + (d.nota.trim() ? d.nota.trim() + '\n\n' : '')
+      + `Con cariño, ${d.de.trim()}.`;
+    prev.textContent = texto;
+    wa.href = 'https://wa.me/?text=' + encodeURIComponent(texto);
+    out.hidden = false;
+  });
+  document.getElementById('gift-copy').addEventListener('click', async (e) => {
+    try { await navigator.clipboard.writeText(texto); e.target.textContent = '¡Copiado!'; }
+    catch(_) { e.target.textContent = 'Selecciona y copia el texto'; }
+  });
+})();
+
+</script>
+</body>
+</html>
