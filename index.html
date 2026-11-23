@@ -706,6 +706,7 @@ dialog::backdrop{background:rgba(35,56,43,.55)}
       <details><summary>¿Necesito experiencia previa?</summary><p>No. Alguien lee la tarjeta en voz alta y responde a quien le toque.</p></details>
       <details><summary>¿Funciona en el celular?</summary><p>Sí, está hecho primero para celular. Basta un solo teléfono al centro de la mesa.</p></details>
       <details><summary>¿Si compro un mazo, veo los demás?</summary><p>Ves toda la biblioteca, pero solo se abren los mazos que compraste. Puedes sumar otros cuando quieras.</p></details>
+      <details><summary>¿Esto es terapia?</summary><p>No. Es un juego de conversación para entretener, convivir y platicar de lo que normalmente no se platica. No ofrece diagnóstico ni tratamiento y no sustituye la ayuda de un profesional de la salud mental. Si alguien en la mesa está pasando por un momento difícil, lo mejor es buscar apoyo profesional.</p></details>
       <details><summary>¿Y si en mi familia hay temas delicados?</summary><p>Cualquiera puede pasar sin explicar por qué. Las preguntas no tocan política, dinero ni pleitos familiares.</p></details>
       <details><summary>¿Y si no me llega mi acceso?</summary><p>Revisa tu bandeja de spam y de promociones con el correo que escribiste al pagar. Si no está, escríbenos a <a href="mailto:soporteminiapps888@gmail.com">soporteminiapps888@gmail.com</a> con ese correo y te ayudamos.</p></details>
       <details><summary>¿Puedo regalarlo?</summary><p>Sí. Al pagar escribe el correo de quien lo va a recibir y el acceso le llega a esa persona. Arriba puedes crear el mensaje de regalo para avisarle.</p></details>
@@ -735,6 +736,7 @@ dialog::backdrop{background:rgba(35,56,43,.55)}
     <div class="iconrow" style="--size:20px;--gap:10px" aria-hidden="true" id="firma-footer"></div>
     <p class="legal">© <span id="year"></span> Solo nosotros · <a href="aviso-privacidad.html">Aviso de privacidad</a> · <a href="terminos.html">Términos y condiciones</a></p>
     <p class="legal">Pagos procesados de forma segura por Hotmart.</p>
+    <p class="legal" style="max-width:640px">Solo nosotros es un juego de conversación con fines recreativos, para convivir y animar conversaciones más profundas. No es terapia ni sustituye el consejo o la atención de un profesional de la salud mental.</p>
     <p class="legal">¿Dudas o problemas con tu acceso? Escríbenos a <a href="mailto:soporteminiapps888@gmail.com">soporteminiapps888@gmail.com</a></p>
   </div>
 </footer>
@@ -746,10 +748,10 @@ dialog::backdrop{background:rgba(35,56,43,.55)}
    ========================================================= */
 const CHECKOUT = {
   navidad:  'https://pay.hotmart.com/S108584990N',
-  familia:  'https://pay.hotmart.com/REEMPLAZAR_FAMILIA',
-  pareja:   'https://pay.hotmart.com/REEMPLAZAR_TU_Y_YO',
-  amigos:   'https://pay.hotmart.com/REEMPLAZAR_ENTRE_AMIGOS',
-  brindemos:'https://pay.hotmart.com/REEMPLAZAR_BRINDEMOS',
+  familia:  'https://pay.hotmart.com/W108621543U',
+  pareja:   'https://pay.hotmart.com/S108621663U',
+  amigos:   'https://pay.hotmart.com/V108621739P',
+  brindemos:'https://pay.hotmart.com/A108621776B',
   conocete: 'https://pay.hotmart.com/REEMPLAZAR_CONOCETE',
   ninos:    'https://pay.hotmart.com/REEMPLAZAR_CUENTAME'
 };
@@ -760,10 +762,10 @@ const CHECKOUT = {
    disponible: true   → muestra el botón de compra.
    ========================================================= */
 const COLECCIONES = [
-  { id:'familia',   nombre:'Las historias de nuestra familia', icono:'flor',     tono:'t-amarillo', para:'Para preguntarle a tus papás y abuelos lo que nunca les preguntaste.', trae:'55 tarjetas', precio:149, disponible:false },
-  { id:'pareja',    nombre:'Tú y yo',                          icono:'corazon',  tono:'t-coral',    para:'Para parejas que creen que ya se saben todo del otro.',                 trae:'55 tarjetas', precio:149, disponible:false },
-  { id:'amigos',    nombre:'Entre amigos',                     icono:'bocadillo',tono:'t-turquesa', para:'Para amigos de años que siempre terminan platicando de lo mismo.',     trae:'55 tarjetas', precio:149, disponible:false },
-  { id:'brindemos', nombre:'Brindemos por nosotros',           icono:'destello', tono:'t-coral',    para:'Para cumpleaños, aniversarios y cualquier celebración.',             trae:'55 tarjetas', precio:149, disponible:false },
+  { id:'familia',   nombre:'Las historias de nuestra familia', icono:'flor',     tono:'t-amarillo', para:'Para preguntarle a tus papás y abuelos lo que nunca les preguntaste.', trae:'55 tarjetas', precio:149, disponible:true },
+  { id:'pareja',    nombre:'Tú y yo',                          icono:'corazon',  tono:'t-coral',    para:'Para parejas que creen que ya se saben todo del otro.',                 trae:'55 tarjetas', precio:149, disponible:true },
+  { id:'amigos',    nombre:'Entre amigos',                     icono:'bocadillo',tono:'t-turquesa', para:'Para amigos de años que siempre terminan platicando de lo mismo.',     trae:'55 tarjetas', precio:149, disponible:true },
+  { id:'brindemos', nombre:'Brindemos por nosotros',           icono:'destello', tono:'t-coral',    para:'Para cumpleaños, aniversarios y cualquier celebración.',             trae:'55 tarjetas', precio:149, disponible:true },
   { id:'conocete',  nombre:'Conócete sin filtro',              icono:'hoja',     tono:'t-verde',    para:'Para saber qué piensas de verdad. A solas o con alguien de confianza.', trae:'55 tarjetas', precio:149, disponible:false },
   { id:'ninos',     nombre:'Cuéntame, te escucho',             icono:'tren',     tono:'t-turquesa', para:'Para un adulto y un niño, en dos niveles: de 4 a 7 y de 8 a 12 años.',  trae:'72 preguntas y 3 especiales', precio:149, disponible:false }
 ];
