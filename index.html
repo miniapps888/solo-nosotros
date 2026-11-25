@@ -280,6 +280,13 @@ dialog::backdrop{background:rgba(35,56,43,.55)}
 .pricebox .offer .old{font-size:44px}.pricebox .offer .now{font-size:76px;line-height:1}
 .resumen .offer .old{font-size:28px}.resumen .offer .now{font-size:48px}
 
+/* ---------- cuenta regresiva a Nochebuena ---------- */
+.countdown{display:inline-flex;align-items:center;gap:10px;margin:0;padding:9px 16px;border-radius:999px;background:var(--papel);border:1.5px solid var(--verde);color:var(--verde);font-weight:700;font-size:16px}
+.countdown [data-icon]{width:22px;height:22px;display:inline-block}.countdown [data-icon] svg{width:22px;height:22px}
+.countdown b{font-family:'Fraunces',serif;font-size:20px}
+.countdown.light{background:rgba(255,241,216,.12);border-color:rgba(255,241,216,.5);color:var(--crema);margin-top:30px}
+.cierre .countdown.light+.btn{margin-top:18px}
+
 /* ---------- animación ---------- */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
 .reveal.in{opacity:1;transform:none}
@@ -348,6 +355,7 @@ dialog::backdrop{background:rgba(35,56,43,.55)}
         <li>Mini app web</li><li>No se descarga nada</li><li>Acceso inmediato</li>
       </ul>
       <div class="cta-row">
+        <p class="countdown js-countdown" hidden aria-live="polite"><span data-icon="pino"></span><span class="cd-txt"></span></p>
         <a class="btn big js-checkout" data-mazo="navidad" href="#">Quiero una Nochebuena que sí se platique</a>
         <p class="price-chip"><span class="offer"><span class="val">Valor</span><s class="old">$345</s><span class="now">$149</span></span><br>MXN, IVA incluido · Esta Navidad, conectemos con 4 bonos de lanzamiento</p>
       </div>
@@ -390,6 +398,7 @@ dialog::backdrop{background:rgba(35,56,43,.55)}
       </div>
     </div>
     <div class="cta-row" style="align-items:center">
+      <p class="countdown js-countdown" hidden aria-live="polite"><span data-icon="pino"></span><span class="cd-txt"></span></p>
       <a class="btn big js-checkout" data-mazo="navidad" href="#">Quiero una Nochebuena que sí se platique</a>
     </div>
   </div>
@@ -724,6 +733,7 @@ dialog::backdrop{background:rgba(35,56,43,.55)}
       <p>Merecías irte a dormir sintiendo que tu familia sí platicó.</p>
       <p>Hoy es el día de dejar la plática de siempre y empezar la que van a recordar.</p>
     </div>
+    <p class="countdown light js-countdown" hidden aria-live="polite"><span data-icon="pino-crema"></span><span class="cd-txt"></span></p>
     <a class="btn big js-checkout" data-mazo="navidad" href="#">Armar la sobremesa que vamos a recordar</a>
   </div>
 </section>
@@ -826,6 +836,28 @@ function reveal(){
   els.forEach(e => io.observe(e));
 }
 
+/* =========================================================
+   CUENTA REGRESIVA REAL: días que faltan para Nochebuena (24 de diciembre)
+   y después para Año Nuevo. Se calcula con la fecha del celular de quien visita.
+   Después del 31 de diciembre se oculta sola.
+   ========================================================= */
+function countdown(){
+  const hoy = new Date(); hoy.setHours(0,0,0,0);
+  const y = hoy.getFullYear();
+  const dias = (m, d) => Math.round((new Date(y, m, d) - hoy) / 86400000);
+  const nb = dias(11, 24), an = dias(11, 31);
+  let txt = '';
+  if (nb > 1) txt = `Faltan <b>${nb}</b> días para Nochebuena`;
+  else if (nb === 1) txt = '¡Mañana es Nochebuena!';
+  else if (nb === 0) txt = '¡Hoy es Nochebuena! Todavía estás a tiempo';
+  else if (an > 1) txt = `Faltan <b>${an}</b> días para Año Nuevo`;
+  else if (an === 1) txt = '¡Mañana es Año Nuevo!';
+  else if (an === 0) txt = '¡Hoy es Año Nuevo! Todavía estás a tiempo';
+  if (!txt || nb > 60) return;
+  document.querySelectorAll('.js-countdown').forEach(el => { el.querySelector('.cd-txt').innerHTML = txt; el.hidden = false; });
+}
+
+countdown();
 fillIcons();
 renderColecciones();
 wireCheckout();
